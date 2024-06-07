@@ -1,0 +1,62 @@
+@use "../../styles/partials/variables" as *;
+
+.video-info {
+  padding: $mobile-padding-between-components $mobile-padding-between-components;
+
+  &__title {
+    color: $BrainFlix-Black;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__channel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    h3 {
+      font-size: 0.8rem;
+      font-weight: $font-weight-dami;
+      padding-bottom: $mobile-padding-between-components;
+    }
+  }
+
+  &__date {
+    color: $Silver;
+    font-size: 0.8rem;
+  }
+
+  &__view-likes {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__view {
+    display: flex;
+    align-items: start;
+    color: $Silver;
+    font-size: 0.8rem;
+    padding-bottom: $mobile-padding-between-components;
+
+    img {
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__likes {
+    @extend .video-info__view;
+    padding-bottom: 0;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+  }
+}

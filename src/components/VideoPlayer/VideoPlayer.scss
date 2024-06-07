@@ -1,0 +1,15 @@
+@use "../../styles/partials/variables" as *;
+
+.video-player {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__player {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}

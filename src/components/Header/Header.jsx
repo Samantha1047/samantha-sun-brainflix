@@ -1,9 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import logoImg from "../../assets/images/BrainFlix-logo.svg";
-import searchIcon from "../../assets/images/search.svg";
 import uploadIcon from "../../assets/images/upload.svg";
-import avatarImg from "../../assets/images/Mohan-muruge.jpg";
 
 const Header = () => {
   return (
