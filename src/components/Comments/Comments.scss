@@ -20,12 +20,6 @@
       font-weight: bold;
     }
   }
-
-  &__entryList {
-    @include desktop {
-      padding: 0 1rem;
-    }
-  }
 }
 
 .comment__entryList .comment-entry:last-child .divider {

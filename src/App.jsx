@@ -21,6 +21,9 @@ function App() {
 
     const updatedVieoList = VideoData.filter((item) => item.id !== videoId);
     setCurrentVideoList(updatedVieoList);
+
+    //set the view to top of the page
+    window.scrollTo(0, 0);
   };
 
   return (
