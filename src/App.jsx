@@ -5,10 +5,11 @@ import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import VideoInfo from "./components/VideoInfo/VideoInfo";
 import Comments from "./components/Comments/Comments";
+import VideoList from "./components/VideoList/VideoList";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(VideoData[0]);
-  console.log(VideoData[0]);
+  console.log(VideoData);
 
   const selectVideo = (videoId) => {
     console.log("Selected video:", videoId);
@@ -22,9 +23,10 @@ function App() {
     <>
       <Header />
       <main>
-        <VideoPlayer videoData={currentVideo} />
-        <VideoInfo videoData={currentVideo} />
-        <Comments videoData={currentVideo} />
+        <VideoPlayer OnSelectvideo={currentVideo} />
+        <VideoInfo OnSelectvideo={currentVideo} />
+        <Comments OnSelectvideo={currentVideo} />
+        <VideoList videoList={VideoData} onSelectVideo={selectVideo} />
       </main>
     </>
   );
