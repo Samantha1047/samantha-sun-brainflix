@@ -1,12 +1,21 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .video-list {
   padding: 0 $mobile-padding-between-components;
+
+  @include tablet {
+    padding: $mobile-padding-between-components $tab-padding-before-headlines;
+  }
 
   h3 {
     color: $Silver;
     font-weight: $font-weight-dami;
     font-size: 0.75rem;
     margin-bottom: 0.5rem;
+
+    @include tablet {
+      margin-bottom: 1rem;
+    }
   }
 }

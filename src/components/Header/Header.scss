@@ -1,9 +1,16 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .header {
   background-color: $White;
   position: relative;
   padding: $mobile-padding-between-components;
+
+  @include tablet {
+    padding: $mobile-padding-between-components $tab-padding-before-headlines;
+    display: flex;
+    align-items: center;
+  }
 
   &__logo {
     height: 1.5625rem;
@@ -11,10 +18,19 @@
     align-items: center;
     justify-content: center;
     padding-bottom: $mobile-padding-between-components;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   &__search-bar {
     position: relative;
+
+    @include tablet {
+      display: flex;
+      flex: 80%;
+    }
 
     input {
       background-image: url("../../assets/images/search.svg");
@@ -31,6 +47,12 @@
       &::placeholder {
         color: $BrainFlix-Black;
       }
+
+      @include tablet {
+        flex: 1;
+        margin: 0 1.5rem 0 7rem;
+        height: 2.5rem;
+      }
     }
   }
 
@@ -44,10 +66,22 @@
     height: 2.3rem;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $BrainFlix-DarkBlue;
+    }
+
+    @include tablet {
+      margin: 0;
+      flex: 1;
+      margin-right: 4rem;
+      height: 2.5rem;
+      position: relative;
+    }
   }
 
   &__button-icon {
@@ -64,5 +98,10 @@
     position: absolute;
     top: 0;
     right: 0;
+
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }

@@ -9,7 +9,9 @@ const VideoInfo = ({ OnSelectvideo }) => {
     <div className="video-info">
       <h1 className="video-info__title">{OnSelectvideo.title}</h1>
 
-      <Divider className="divider-mobile" />
+      <div className="divider-mobile">
+        <Divider />
+      </div>
 
       <div className="video-info__container">
         <section className="video-info__channel">

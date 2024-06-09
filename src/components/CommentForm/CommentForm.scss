@@ -1,19 +1,36 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .comment-form {
   padding: 0;
   display: flex;
   padding-top: $mobile-padding-between-components;
 
+  @include tablet {
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
   &__avatar {
     background-image: url(../../assets/images/Mohan-muruge.jpg);
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     background-size: cover;
     flex: 0 0 auto;
     margin-right: 1rem;
     margin-top: 1.2rem;
+
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__container {
+    @include tablet {
+      width: 64%;
+    }
   }
 
   label {
@@ -23,11 +40,15 @@
   }
 
   #commentId {
-    width: 100%;
+    width: 99%;
     height: 30vw;
     background-color: $Alabaster;
     border: 0.1rem solid $Mercury;
     border-radius: 0.25rem;
+
+    @include tablet {
+      height: 2.5rem;
+    }
 
     &::placeholder {
       color: $BrainFlix-Black;
@@ -35,6 +56,10 @@
       top: 0;
       left: 0;
       padding: 0.625rem;
+
+      @include tablet {
+        padding: 0.75rem;
+      }
     }
 
     &:focus {
@@ -63,6 +88,19 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $BrainFlix-DarkBlue;
+    }
+
+    @include tablet {
+      position: absolute;
+      top: 1.3rem;
+      right: 0;
+      height: 2.5rem;
+      width: 25%;
+    }
   }
 
   &__button-icon {

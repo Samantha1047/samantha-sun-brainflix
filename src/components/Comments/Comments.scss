@@ -1,10 +1,19 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .comment {
   padding: 0 $mobile-padding-between-components;
 
+  @include tablet {
+    padding: 0 $tab-padding-before-headlines;
+  }
+
   &__title {
     font-weight: $font-weight-dami;
     font-size: 0.8rem;
+
+    @include tablet {
+      font-weight: bold;
+    }
   }
 }
