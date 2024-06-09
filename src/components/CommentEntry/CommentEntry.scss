@@ -11,6 +11,10 @@
     @include tablet {
       margin: 1.5rem 0;
     }
+
+    @include desktop {
+      padding-left: 0.9rem;
+    }
   }
 
   &__avatar {
@@ -33,7 +37,7 @@
     width: 100%;
 
     @include desktop {
-      margin-right: 2rem;
+      padding-right: 2.2rem;
       margin-left: 1rem;
     }
 
@@ -61,6 +65,10 @@
     @include tablet {
       font-size: 0.875rem;
     }
+
+    @include desktop {
+      right: 3rem;
+    }
   }
 
   &__content {
@@ -75,6 +83,7 @@
 
     @include desktop {
       text-align: left;
+      padding-right: 0.5rem;
     }
   }
 }
