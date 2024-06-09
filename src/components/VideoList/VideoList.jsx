@@ -1,5 +1,6 @@
 import React from "react";
 import VideoListEntry from "../VideoListEntry/VideoListEntry";
+import "./VideoList.scss";
 
 const VideoList = ({ videoList, onSelectVideo }) => {
   const handleSelectVideo = (id) => {

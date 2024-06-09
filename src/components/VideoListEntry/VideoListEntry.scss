@@ -1,1 +1,34 @@
 @use "../../styles/partials/variables" as *;
+
+.video-entry {
+  padding: 0.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &__img {
+    width: 7rem;
+    height: auto;
+    border-radius: 0.25rem;
+    flex: 30%;
+    background-color: $Mercury;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    flex: 60%;
+    margin-left: 1rem;
+  }
+
+  &__title {
+    font-weight: $font-weight-dami;
+    font-size: 0.8125rem;
+  }
+
+  &__channel {
+    font-size: 0.8125rem;
+  }
+}

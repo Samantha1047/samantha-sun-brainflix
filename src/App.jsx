@@ -10,6 +10,7 @@ import VideoList from "./components/VideoList/VideoList";
 function App() {
   const [currentVideo, setCurrentVideo] = useState(VideoData[0]);
   console.log(VideoData);
+  const [currentVideoList, setCurrentVideoList] = useState(VideoData.slice(1));
 
   const selectVideo = (videoId) => {
     console.log("Selected video:", videoId);
@@ -17,6 +18,9 @@ function App() {
       return video.id === videoId;
     });
     setCurrentVideo(videoToSelect);
+
+    const updatedVieoList = VideoData.filter((item) => item.id !== videoId);
+    setCurrentVideoList(updatedVieoList);
   };
 
   return (
@@ -26,7 +30,7 @@ function App() {
         <VideoPlayer OnSelectvideo={currentVideo} />
         <VideoInfo OnSelectvideo={currentVideo} />
         <Comments OnSelectvideo={currentVideo} />
-        <VideoList videoList={VideoData} onSelectVideo={selectVideo} />
+        <VideoList videoList={currentVideoList} onSelectVideo={selectVideo} />
       </main>
     </>
   );

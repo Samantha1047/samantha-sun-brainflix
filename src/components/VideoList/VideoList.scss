@@ -1,1 +1,12 @@
 @use "../../styles/partials/variables" as *;
+
+.video-list {
+  padding: 0 $mobile-padding-between-components;
+
+  h3 {
+    color: $Silver;
+    font-weight: $font-weight-dami;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+}
