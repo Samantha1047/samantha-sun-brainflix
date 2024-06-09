@@ -8,6 +8,10 @@
     padding: 0 $tab-padding-before-headlines;
   }
 
+  @include desktop {
+    padding: 0 0 0 $desktop-padding-width;
+  }
+
   &__title {
     font-weight: $font-weight-dami;
     font-size: 0.8rem;
@@ -15,5 +19,17 @@
     @include tablet {
       font-weight: bold;
     }
+  }
+
+  &__entryList {
+    @include desktop {
+      padding: 0 1rem;
+    }
+  }
+}
+
+.comment__entryList .comment-entry:last-child .divider {
+  @include desktop {
+    display: none;
   }
 }

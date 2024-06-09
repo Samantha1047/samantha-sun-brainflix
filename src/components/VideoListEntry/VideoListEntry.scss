@@ -11,6 +11,10 @@
     padding: 0.8rem 0;
   }
 
+  @include desktop {
+    flex: 1;
+  }
+
   &__img {
     width: 7rem;
     height: auto;
@@ -20,6 +24,13 @@
 
     @include tablet {
       flex: 0%;
+    }
+
+    @include desktop {
+      flex: 0;
+      width: 8rem;
+      height: fit-content;
+      border-radius: 0.3125rem;
     }
   }
 
@@ -33,6 +44,10 @@
 
     @include tablet {
       margin-right: 24rem;
+    }
+
+    @include desktop {
+      margin-right: 0;
     }
   }
 

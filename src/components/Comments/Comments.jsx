@@ -10,7 +10,7 @@ const Comments = ({ OnSelectvideo }) => {
       <span className="comment__title">{OnSelectvideo.comments.length} Comments</span>
       <CommentForm />
       <Divider />
-      <div>
+      <div className="comment__entryList">
         {OnSelectvideo.comments.map((entry) => (
           <CommentEntry key={entry.id} entry={entry} />
         ))}

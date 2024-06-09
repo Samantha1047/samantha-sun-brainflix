@@ -13,6 +13,7 @@ const CommentEntry = ({ entry }) => {
           <p className="comment-entry__content">{entry.comment}</p>
         </div>
       </article>
+
       <Divider />
     </section>
   );

@@ -24,15 +24,21 @@ function App() {
   };
 
   return (
-    <>
+    <div className="brain-flix-app">
       <Header />
       <main>
         <VideoPlayer OnSelectvideo={currentVideo} />
-        <VideoInfo OnSelectvideo={currentVideo} />
-        <Comments OnSelectvideo={currentVideo} />
-        <VideoList videoList={currentVideoList} onSelectVideo={selectVideo} />
+        <div className="brain-flix__content-container">
+          <div className="brain-flix__info-comments-container">
+            <VideoInfo OnSelectvideo={currentVideo} />
+            <Comments OnSelectvideo={currentVideo} />
+          </div>
+          <div className="brain-flix__video-list">
+            <VideoList videoList={currentVideoList} onSelectVideo={selectVideo} />
+          </div>
+        </div>
       </main>
-    </>
+    </div>
   );
 }
 

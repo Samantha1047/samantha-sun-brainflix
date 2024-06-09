@@ -8,6 +8,12 @@
     padding: $mobile-padding-between-components $tab-padding-before-headlines;
   }
 
+  @include desktop {
+    padding: $tab-padding-before-headlines $desktop-padding-width $tab-padding-before-headlines $tab-padding-before-headlines;
+    display: flex;
+    flex-direction: column;
+  }
+
   h3 {
     color: $Silver;
     font-weight: $font-weight-dami;

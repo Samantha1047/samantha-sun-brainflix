@@ -8,6 +8,10 @@
     padding: $tab-padding-between-contents $tab-padding-before-headlines;
   }
 
+  @include desktop {
+    padding: $tab-padding-before-headlines 0 $tab-padding-between-contents $desktop-padding-width;
+  }
+
   &__title {
     color: $BrainFlix-Black;
     font-size: 1.5rem;
@@ -23,6 +27,10 @@
 
   &__container {
     display: flex;
+
+    @include desktop {
+      margin-right: 2rem;
+    }
   }
 
   &__channel {
@@ -98,6 +106,10 @@
       font-size: 0.875rem;
       line-height: 1.375rem;
       padding-top: 0.5rem;
+    }
+
+    @include desktop {
+      padding-right: 2rem;
     }
   }
 }
