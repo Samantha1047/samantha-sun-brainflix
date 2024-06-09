@@ -1,0 +1,10 @@
+@use "../../styles/partials/variables" as *;
+
+.comment {
+  padding: 0 $mobile-padding-between-components;
+
+  &__title {
+    font-weight: $font-weight-dami;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,48 @@
+@use "../../styles/partials/variables" as *;
+
+.comment-entry {
+  &__article {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  &__avatar {
+    background-color: $Mercury;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid $Mercury;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    margin-right: $mobile-padding-between-components;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+
+    h4 {
+      display: inline;
+      font-size: 0.8rem;
+      font-weight: $font-weight-dami;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $Silver;
+    font-size: 0.8rem;
+  }
+
+  &__content {
+    margin-top: $mobile-padding-before-headlines;
+    font-size: 0.79rem;
+    line-height: 1rem;
+  }
+}

@@ -4,6 +4,7 @@ import VideoData from "./data/video-details.json";
 import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import VideoInfo from "./components/VideoInfo/VideoInfo";
+import Comments from "./components/Comments/Comments";
 
 function App() {
   const [currentVideo, setCurrentVideo] = useState(VideoData[0]);
@@ -23,6 +24,7 @@ function App() {
       <main>
         <VideoPlayer videoData={currentVideo} />
         <VideoInfo videoData={currentVideo} />
+        <Comments videoData={currentVideo} />
       </main>
     </>
   );
