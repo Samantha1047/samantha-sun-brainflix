@@ -68,6 +68,10 @@
     }
   }
 
+  &__button-container {
+    position: relative;
+  }
+
   &__button {
     &--publish {
       background-color: $BrainFlix-Blue;
