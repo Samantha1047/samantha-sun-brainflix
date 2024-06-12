@@ -1,0 +1,11 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-upload {
+  padding: $mobile-padding-before-headlines $mobile-padding-between-components;
+
+  &__title {
+    font-size: 1.5rem;
+    color: $BrainFlix-Black;
+  }
+}

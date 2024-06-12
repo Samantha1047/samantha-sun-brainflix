@@ -1,0 +1,116 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-upload-form {
+  padding: $mobile-padding-before-headlines 0;
+  width: 100%;
+  overflow: hidden;
+
+  label {
+    font-size: 0.75rem;
+    color: $Silver;
+    font-weight: $font-weight-dami;
+  }
+
+  &__thumbnail-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-top: 0.2rem;
+  }
+
+  &__input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+
+    label {
+      padding-top: 1rem;
+      padding-bottom: 0.3rem;
+    }
+
+    input {
+      background-color: $Alabaster;
+      border: 0.1rem solid $Mercury;
+      border-radius: 0.3rem;
+      padding-left: 0.8rem;
+      height: 2.25rem;
+      width: 94%;
+      font-size: 0.8rem;
+
+      &::placeholder {
+        color: $BrainFlix-Black;
+      }
+
+      @include tablet {
+        flex: 1;
+        margin: 0 1.5rem 0 7rem;
+        height: 2.5rem;
+      }
+
+      @include desktop {
+        margin: 0 1.8rem 0 29rem;
+      }
+    }
+
+    textarea {
+      height: 23vw;
+      background-color: $Alabaster;
+      border: 0.1rem solid $Mercury;
+      border-radius: 0.25rem;
+      padding-top: 0.8rem;
+      padding-left: 0.8rem;
+
+      &::placeholder {
+        color: $BrainFlix-Black;
+      }
+    }
+  }
+
+  &__button {
+    &--publish {
+      background-color: $BrainFlix-Blue;
+      color: $White;
+      font-size: 0.8rem;
+      font-weight: $font-weight-dami;
+      width: 100%;
+      height: 2.3rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $BrainFlix-DarkBlue;
+      }
+
+      @include tablet {
+        position: absolute;
+        top: 1.3rem;
+        right: 0;
+        height: 2.5rem;
+        width: 25%;
+      }
+
+      img {
+        position: absolute;
+        height: 1.3rem;
+        left: 0.8rem;
+      }
+    }
+
+    &--cancel {
+      width: 100%;
+      padding-top: $mobile-padding-before-headlines;
+      border: none;
+      background-color: white;
+      color: $BrainFlix-Blue;
+      font-weight: $font-weight-dami;
+    }
+  }
+}

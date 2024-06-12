@@ -64,6 +64,10 @@
     }
   }
 
+  &__button-link {
+    text-decoration: none;
+  }
+
   &__button {
     margin-top: $mobile-padding-between-components;
     background-color: $BrainFlix-Blue;
