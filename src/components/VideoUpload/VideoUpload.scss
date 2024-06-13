@@ -4,8 +4,30 @@
 .video-upload {
   padding: $mobile-padding-before-headlines $mobile-padding-between-components;
 
+  @include tablet {
+    padding: $mobile-padding-between-components $tab-padding-before-headlines;
+  }
+
+  @include desktop {
+    padding: $mobile-padding-between-components $desktop-padding-width;
+  }
+
   &__title {
     font-size: 1.5rem;
     color: $BrainFlix-Black;
+
+    @include tablet {
+      font-size: 2rem;
+      padding-top: $mobile-padding-before-headlines;
+    }
+  }
+}
+
+.divider-without-mobile {
+  display: none;
+
+  @include tablet {
+    display: block;
+    padding-top: $mobile-padding-before-headlines;
   }
 }

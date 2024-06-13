@@ -3,6 +3,7 @@
 @use "./styles/partials/mixins" as *;
 
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "AvenirNextLTPro";

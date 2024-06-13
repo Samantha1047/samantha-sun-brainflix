@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import videoThumbnailImg from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/images/publish.svg";
+import DividerNoPadding from "../DividerNoPadding/DividerNoPadding";
 import "./VideoUploadForm.scss";
 
 const VideoUploadForm = () => {
@@ -16,13 +17,20 @@ const VideoUploadForm = () => {
 
   return (
     <form className="video-upload-form" onSubmit={handleSubmit}>
-      <label>VIDEO THUMBNAIL</label>
-      <img className="video-upload-form__thumbnail-img" src={videoThumbnailImg} alt="video-thumbnail-preview-img" />
-      <div className="video-upload-form__input-container">
-        <label>TITLE YOUR VIDEO</label>
-        <input type="text" name="upload-video-title" placeholder="Add a title to your video" />
-        <label>ADD A VIDEO DESCRIPTION</label>
-        <textarea name="upload-video-description" placeholder="Add a description to your video" />
+      <div className="video-upload-form__desktop-container">
+        <div className="video-upload-form__thembnail-container">
+          <label>VIDEO THUMBNAIL</label>
+          <img className="video-upload-form__thumbnail-img" src={videoThumbnailImg} alt="video-thumbnail-preview-img" />
+        </div>
+        <div className="video-upload-form__input-container">
+          <label>TITLE YOUR VIDEO</label>
+          <input type="text" name="upload-video-title" placeholder="Add a title to your video" />
+          <label>ADD A VIDEO DESCRIPTION</label>
+          <textarea name="upload-video-description" placeholder="Add a description to your video" />
+        </div>
+      </div>
+      <div className="divider-without-mobile-style">
+        <DividerNoPadding />
       </div>
       <div className="video-upload-form__button-container">
         <button type="submit" className="video-upload-form__button video-upload-form__button--publish">

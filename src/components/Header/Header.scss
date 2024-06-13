@@ -10,6 +10,7 @@
     padding: $mobile-padding-between-components $tab-padding-before-headlines;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   @include desktop {
@@ -45,7 +46,7 @@
       border-radius: 0.3rem;
       padding-left: 2.3rem;
       height: 2.25rem;
-      width: 60%;
+      width: 80%;
       font-size: 0.8rem;
 
       &::placeholder {

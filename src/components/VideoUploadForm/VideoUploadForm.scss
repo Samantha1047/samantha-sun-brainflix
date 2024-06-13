@@ -6,6 +6,30 @@
   width: 100%;
   overflow: hidden;
 
+  @include tablet {
+    padding: $tab-padding-between-contents 0;
+  }
+
+  @include desktop {
+    padding: 0;
+  }
+
+  &__desktop-container {
+    @include desktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__thembnail-container {
+    @include desktop {
+      width: 45%;
+      padding-right: 2rem;
+      padding-bottom: 1.5rem;
+      padding-top: 1.5rem;
+    }
+  }
+
   label {
     font-size: 0.75rem;
     color: $Silver;
@@ -17,6 +41,14 @@
     height: auto;
     display: block;
     padding-top: 0.2rem;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
   }
 
   &__input-container {
@@ -28,6 +60,10 @@
     label {
       padding-top: 1rem;
       padding-bottom: 0.3rem;
+
+      @include desktop {
+        padding-top: 1.5rem;
+      }
     }
 
     input {
@@ -36,21 +72,31 @@
       border-radius: 0.3rem;
       padding-left: 0.8rem;
       height: 2.25rem;
-      width: 94%;
+      width: 100%;
       font-size: 0.8rem;
 
       &::placeholder {
         color: $BrainFlix-Black;
       }
 
+      &:focus {
+        outline: none;
+        border: 2px solid $BrainFlix-Blue;
+      }
+
+      &.error {
+        outline: none;
+        border: 1px solid #d22d2d;
+      }
+
       @include tablet {
+        font-size: 0.9rem;
         flex: 1;
-        margin: 0 1.5rem 0 7rem;
-        height: 2.5rem;
+        padding: 0.6rem 0 0.6rem 1rem;
       }
 
       @include desktop {
-        margin: 0 1.8rem 0 29rem;
+        font-size: 0.85rem;
       }
     }
 
@@ -65,11 +111,36 @@
       &::placeholder {
         color: $BrainFlix-Black;
       }
+
+      &:focus {
+        outline: none;
+        border: 2px solid $BrainFlix-Blue;
+      }
+
+      &.error {
+        outline: none;
+        border: 1px solid #d22d2d;
+      }
+
+      @include tablet {
+        height: 10vw;
+        font-size: 0.9rem;
+        padding-left: 1rem;
+      }
+
+      @include desktop {
+        height: 7vw;
+      }
     }
   }
 
   &__button-container {
     position: relative;
+    height: 4rem;
+
+    @include tablet {
+      padding-top: 1rem;
+    }
   }
 
   &__button {
@@ -95,10 +166,14 @@
 
       @include tablet {
         position: absolute;
-        top: 1.3rem;
+        top: 1.65rem;
         right: 0;
         height: 2.5rem;
         width: 25%;
+      }
+
+      @include desktop {
+        width: 14%;
       }
 
       img {
@@ -115,6 +190,29 @@
       background-color: white;
       color: $BrainFlix-Blue;
       font-weight: $font-weight-dami;
+
+      &:hover {
+        cursor: pointer;
+        color: $BrainFlix-DarkBlue;
+      }
+
+      @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 33.4vw;
+      }
+
+      @include desktop {
+        padding-right: 17.5vw;
+      }
     }
+  }
+}
+
+.divider-without-mobile-style {
+  display: none;
+
+  @include tablet {
+    display: block;
   }
 }
