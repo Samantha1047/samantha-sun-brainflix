@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Axios from "axios";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import "./HomePage.scss";
-import VideoData from "../../data/video-details.json";
+import { API_URL, API_KEY } from "../../utils/api";
 import Header from "../../components/Header/Header";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
@@ -11,43 +11,61 @@ import Comments from "../../components/Comments/Comments";
 import VideoList from "../../components/VideoList/VideoList";
 
 const HomePage = () => {
-  const [currentVideo, setCurrentVideo] = useState(VideoData[0]);
-  console.log(VideoData);
-  const [currentVideoList, setCurrentVideoList] = useState(VideoData.slice(1));
+  const { videoId } = useParams();
+  const [currentVideoId, setCurrentVideoId] = useState("");
+  const [currentVideo, setCurrentVideo] = useState({});
+  const [currentVideoList, setCurrentVideoList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setIsError] = useState(false);
 
-  /*   useEffect(() => {
-    const getVideo = async () => {
-      const response = await axios.get(API_URL + "/videos" + API_KEY);
-      setCurrentVideo(response.data);
-    };
-  });
- */
+  const fetchVideoList = async () => {
+    try {
+      const response = await axios.get(`${API_URL}/videos${API_KEY}`);
+      const videoList = response.data;
 
-  const selectVideo = (videoId) => {
-    console.log("Selected video:", videoId);
-    const videoToSelect = VideoData.find((video) => {
+      const DefaultvideoId = videoList[0].id;
+      setCurrentVideoList(videoList.slice(1));
+      const responseVideo = await axios.get(`${API_URL}/videos/${DefaultvideoId}${API_KEY}`);
+      setCurrentVideo(responseVideo.data);
+
+      setIsLoading(false);
+    } catch (err) {
+      setIsError(err.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchVideoList();
+  }, []);
+
+  if (isLoading) return <div>Video Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  /*   const selectVideo = (videoId) => {
+    const videoToSelect = currentVideoList.find((video) => {
       return video.id === videoId;
     });
     setCurrentVideo(videoToSelect);
 
-    const updatedVieoList = VideoData.filter((item) => item.id !== videoId);
+    const updatedVieoList = currentVideoList.filter((item) => item.id !== videoId);
     setCurrentVideoList(updatedVieoList);
 
     //set the view to top of the page
     window.scrollTo(0, 0);
-  };
+  }; */
   return (
     <>
       <Header />
       <main>
-        <VideoPlayer OnSelectvideo={currentVideo} />
+        <VideoPlayer currentVideo={currentVideo} />
+
         <div className="brain-flix__content-container">
           <div className="brain-flix__info-comments-container">
-            <VideoInfo OnSelectvideo={currentVideo} />
-            <Comments OnSelectvideo={currentVideo} />
+            <VideoInfo currentVideo={currentVideo} />
+            <Comments currentVideo={currentVideo} />
           </div>
           <div className="brain-flix__video-list">
-            <VideoList videoList={currentVideoList} onSelectVideo={selectVideo} />
+            <VideoList videoList={currentVideoList} /* onSelectVideo={selectVideo} */ />
           </div>
         </div>
       </main>

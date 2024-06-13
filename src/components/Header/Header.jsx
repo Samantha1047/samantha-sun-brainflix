@@ -9,8 +9,11 @@ const Header = () => {
     <header>
       <div className="header">
         <div className="header__logo">
-          <img src={logoImg} alt="brain-flix-logo"></img>
+          <Link to="/" className="header__logo-link">
+            <img src={logoImg} alt="brain-flix-logo"></img>
+          </Link>
         </div>
+
         <div className="header__search-bar">
           <input type="text" placeholder="Search" />
           <Link to="/upload" className="header__button-link">

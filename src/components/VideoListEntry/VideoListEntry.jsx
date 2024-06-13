@@ -1,13 +1,13 @@
 import React from "react";
 import "./VideoListEntry.scss";
 
-const VideoEntry = ({ id, img, title, channel, onSelectVideo }) => {
-  const handleClick = () => {
+const VideoEntry = ({ id, img, title, channel /* onSelectVideo */ }) => {
+  /*   const handleClick = () => {
     onSelectVideo(id);
   };
-
+ */
   return (
-    <section className="video-entry" onClick={handleClick}>
+    <section className="video-entry" /* onClick={handleClick} */>
       <img className="video-entry__img" src={img} alt={`${title} Video Thumbnail`} />
       <div className="video-entry__info">
         <h4 className="video-entry__title">{title}</h4>
