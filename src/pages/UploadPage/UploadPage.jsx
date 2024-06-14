@@ -1,6 +1,4 @@
 import React from "react";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import DividerNoPadding from "../../components/DividerNoPadding/DividerNoPadding";
 import VideoUpload from "../../components/VideoUpload/VideoUpload";
