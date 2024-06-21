@@ -7,12 +7,12 @@ import uploadIcon from "../../assets/images/upload.svg";
 const Header = () => {
   return (
     <header>
-      <div className="header">
-        <div className="header__logo">
+      <section className="header">
+        <section className="header__logo">
           <Link to="/" className="header__logo-link">
             <img src={logoImg} alt="brain-flix-logo"></img>
           </Link>
-        </div>
+        </section>
 
         <div className="header__search-bar">
           <input type="text" placeholder="Search" />
@@ -22,9 +22,9 @@ const Header = () => {
               UPLOAD
             </button>
           </Link>
-          <div className="header__avatar"></div>
+          <section className="header__avatar"></section>
         </div>
-      </div>
+      </section>
     </header>
   );
 };

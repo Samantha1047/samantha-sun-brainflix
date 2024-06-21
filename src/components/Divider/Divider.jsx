@@ -2,7 +2,7 @@ import React from "react";
 import "./Divider.scss";
 
 const Divider = () => {
-  return <div className="divider"></div>;
+  return <section className="divider"></section>;
 };
 
 export default Divider;

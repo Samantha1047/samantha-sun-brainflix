@@ -2,7 +2,7 @@ import React from "react";
 import "./DividerNoPadding.scss";
 
 const DividerNoPadding = () => {
-  return <div className="divider-no-padding"></div>;
+  return <section className="divider-no-padding"></section>;
 };
 
 export default DividerNoPadding;

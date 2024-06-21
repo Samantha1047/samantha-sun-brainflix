@@ -6,7 +6,7 @@ import "./Comments.scss";
 
 const Comments = ({ currentVideo }) => {
   return (
-    <div className="comment">
+    <section className="comment">
       <span className="comment__title">{currentVideo.comments.length} Comments</span>
       <CommentForm />
       <Divider />
@@ -15,7 +15,7 @@ const Comments = ({ currentVideo }) => {
           <CommentEntry key={entry.id} entry={entry} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

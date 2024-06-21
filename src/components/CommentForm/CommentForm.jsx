@@ -5,7 +5,7 @@ import CommentIcon from "../../assets/images/add_comment.svg";
 const CommentForm = () => {
   return (
     <form className="comment-form" id="comment-form">
-      <div className="comment-form__avatar"></div>
+      <section className="comment-form__avatar"></section>
       <div className="comment-form__container">
         <label>JOIN THE CONVERSATION</label>
         <textarea id="commentId" name="comment" placeholder="Add a new comment"></textarea>

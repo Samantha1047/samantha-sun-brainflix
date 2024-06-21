@@ -6,12 +6,12 @@ import likesIcon from "../../assets/images/likes.svg";
 
 const VideoInfo = ({ currentVideo }) => {
   return (
-    <div className="video-info">
+    <section className="video-info">
       <h1 className="video-info__title">{currentVideo.title}</h1>
 
-      <div className="divider-mobile">
+      <section className="divider-mobile">
         <Divider />
-      </div>
+      </section>
 
       <div className="video-info__container">
         <section className="video-info__channel">
@@ -35,7 +35,7 @@ const VideoInfo = ({ currentVideo }) => {
       <section className="video-info__description">
         <p>{currentVideo.description}</p>
       </section>
-    </div>
+    </section>
   );
 };
 

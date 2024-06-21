@@ -1,10 +1,8 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { API_URL, API_KEY } from "../../utils/api";
 import axios from "axios";
 import "./HomePage.scss";
-import Header from "../../components/Header/Header";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import Comments from "../../components/Comments/Comments";
@@ -72,19 +70,18 @@ const HomePage = () => {
 
   return (
     <>
-      <Header />
       <main>
         <VideoPlayer currentVideo={currentVideo} />
 
-        <div className="brain-flix__content-container">
-          <div className="brain-flix__info-comments-container">
+        <section className="brain-flix__content-container">
+          <section className="brain-flix__info-comments-container">
             <VideoInfo currentVideo={currentVideo} />
             <Comments currentVideo={currentVideo} />
-          </div>
-          <div className="brain-flix__video-list">
+          </section>
+          <section className="brain-flix__video-list">
             <VideoList videoList={currentVideoList} />
-          </div>
-        </div>
+          </section>
+        </section>
       </main>
     </>
   );

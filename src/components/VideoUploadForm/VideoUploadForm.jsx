@@ -29,9 +29,9 @@ const VideoUploadForm = () => {
           <textarea name="upload-video-description" placeholder="Add a description to your video" />
         </div>
       </div>
-      <div className="divider-without-mobile-style">
+      <section className="divider-without-mobile-style">
         <DividerNoPadding />
-      </div>
+      </section>
       <div className="video-upload-form__button-container">
         <button type="submit" className="video-upload-form__button video-upload-form__button--publish">
           <img src={publishIcon} alt="publish-icon" className="video-upload-form__button-icon" />
