@@ -1,16 +1,35 @@
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import videoThumbnailImg from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/images/publish.svg";
 import "./VideoUploadForm.scss";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const VideoUploadForm = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Video Upload Successful!");
-    navigate("/");
-    window.scrollTo(0, 0);
+
+    const randomImageIndex = Math.floor(Math.random() * 9); // 0 to 8
+    const imagePath = `${API_URL}/images/image${randomImageIndex}.jpg`;
+
+    const videoData = {
+      title: e.target.elements["upload-video-title"].value,
+      description: e.target.elements["upload-video-description"].value,
+      image: imagePath,
+    };
+
+    try {
+      await axios.post(`${API_URL}/videos`, videoData);
+      alert("Video uploaded successfully!");
+      navigate("/");
+      window.scrollTo(0, 0);
+    } catch (error) {
+      console.error("Failed to upload video:", error);
+      alert("Failed to upload video.");
+    }
   };
 
   return (
