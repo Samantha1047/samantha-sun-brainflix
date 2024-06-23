@@ -28,4 +28,8 @@
       }
     }
   }
+
+  .divider {
+    @include dividerStyle;
+  }
 }

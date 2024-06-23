@@ -1,5 +1,3 @@
-import React from "react";
-import Divider from "../Divider/Divider";
 import "./VideoInfo.scss";
 import viewIcon from "../../assets/images/views.svg";
 import likesIcon from "../../assets/images/likes.svg";
@@ -10,7 +8,7 @@ const VideoInfo = ({ currentVideo }) => {
       <h1 className="video-info__title">{currentVideo.title}</h1>
 
       <section className="divider-mobile">
-        <Divider />
+        <section className="divider"></section>
       </section>
 
       <div className="video-info__container">
@@ -30,7 +28,7 @@ const VideoInfo = ({ currentVideo }) => {
           </span>
         </section>
       </div>
-      <Divider />
+      <section className="divider"></section>
 
       <section className="video-info__description">
         <p>{currentVideo.description}</p>

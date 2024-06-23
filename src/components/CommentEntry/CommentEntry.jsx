@@ -1,5 +1,3 @@
-import React from "react";
-import Divider from "../Divider/Divider";
 import "./CommentEntry.scss";
 
 const CommentEntry = ({ entry }) => {
@@ -14,7 +12,7 @@ const CommentEntry = ({ entry }) => {
         </div>
       </article>
 
-      <Divider />
+      <section className="divider"></section>
     </section>
   );
 };

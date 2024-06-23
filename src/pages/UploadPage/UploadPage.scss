@@ -1,7 +1,6 @@
 @use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
 
-.divider-no-padding {
+.divider {
   border: 1px solid $Mercury;
   width: 100%;
   margin: 0;

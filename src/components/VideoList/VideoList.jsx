@@ -1,6 +1,4 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import VideoListEntry from "../VideoListEntry/VideoListEntry";
 import "./VideoList.scss";
 

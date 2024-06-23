@@ -1,4 +1,3 @@
-import React from "react";
 import "./VideoListEntry.scss";
 
 const VideoEntry = ({ id, img, title, channel }) => {

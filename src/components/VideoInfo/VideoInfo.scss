@@ -112,6 +112,10 @@
       padding-right: 2rem;
     }
   }
+
+  .divider {
+    @include dividerStyle;
+  }
 }
 
 .divider-mobile {

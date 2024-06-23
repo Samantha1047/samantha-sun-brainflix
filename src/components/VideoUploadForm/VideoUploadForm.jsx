@@ -1,8 +1,6 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import videoThumbnailImg from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/images/publish.svg";
-import DividerNoPadding from "../DividerNoPadding/DividerNoPadding";
 import "./VideoUploadForm.scss";
 
 const VideoUploadForm = () => {
@@ -30,7 +28,7 @@ const VideoUploadForm = () => {
         </div>
       </div>
       <section className="divider-without-mobile-style">
-        <DividerNoPadding />
+        <section className="divider"></section>
       </section>
       <div className="video-upload-form__button-container">
         <button type="submit" className="video-upload-form__button video-upload-form__button--publish">

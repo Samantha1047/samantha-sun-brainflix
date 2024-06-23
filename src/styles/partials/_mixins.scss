@@ -11,3 +11,13 @@
     @content;
   }
 }
+
+@mixin dividerStyle {
+  border: 1px solid $Mercury;
+  width: 100%;
+  margin: $mobile-padding-between-components 0;
+
+  @include tablet {
+    margin: 0.5rem 0 $mobile-padding-between-components 0;
+  }
+}

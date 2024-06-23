@@ -207,6 +207,12 @@
       }
     }
   }
+
+  .divider {
+    border: 1px solid $Mercury;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .divider-without-mobile-style {
