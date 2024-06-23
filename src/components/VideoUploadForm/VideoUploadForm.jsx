@@ -9,6 +9,10 @@ const API_URL = import.meta.env.VITE_API_URL;
 const VideoUploadForm = () => {
   const navigate = useNavigate();
 
+  const handleCancel = () => {
+    navigate("/");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,9 +45,9 @@ const VideoUploadForm = () => {
         </div>
         <div className="video-upload-form__input-container">
           <label>TITLE YOUR VIDEO</label>
-          <input type="text" name="upload-video-title" placeholder="Add a title to your video" />
+          <input type="text" name="upload-video-title" placeholder="Add a title to your video" required />
           <label>ADD A VIDEO DESCRIPTION</label>
-          <textarea name="upload-video-description" placeholder="Add a description to your video" />
+          <textarea name="upload-video-description" placeholder="Add a description to your video" required />
         </div>
       </div>
       <section className="divider-without-mobile-style">
@@ -54,7 +58,7 @@ const VideoUploadForm = () => {
           <img src={publishIcon} alt="publish-icon" className="video-upload-form__button-icon" />
           PUBLISH
         </button>
-        <button type="button" className="video-upload-form__button video-upload-form__button--cancel">
+        <button type="button" onClick={handleCancel} className="video-upload-form__button video-upload-form__button--cancel">
           CANCEL
         </button>
       </div>
