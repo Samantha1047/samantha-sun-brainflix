@@ -1,71 +1,45 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { API_URL, API_KEY } from "../../utils/api";
-import axios from "axios";
 import "./HomePage.scss";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import Comments from "../../components/Comments/Comments";
 import VideoList from "../../components/VideoList/VideoList";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const HomePage = () => {
   const { videoId } = useParams();
   const [currentVideo, setCurrentVideo] = useState({});
-  const [currentVideoList, setCurrentVideoList] = useState([]);
+  const [videoList, setVideoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setIsError] = useState(false);
 
-  const fetchDefaultVideoList = async () => {
+  const fetchVideo = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`${API_URL}/videos${API_KEY}`);
-      const videoList = response.data;
+      const { data: videoList } = await axios.get(`${API_URL}/videos`);
+      setVideoList(videoList);
 
-      const DefaultvideoId = videoList[0].id;
-      setCurrentVideoList(videoList.slice(1));
-      const responseVideo = await axios.get(`${API_URL}/videos/${DefaultvideoId}${API_KEY}`);
-      setCurrentVideo(responseVideo.data);
-
-      setIsLoading(false);
+      if (videoId) {
+        const { data: fetchedVideo } = await axios.get(`${API_URL}/videos/${videoId}`);
+        setCurrentVideo(fetchedVideo);
+      } else {
+        setCurrentVideo(videoList[0]);
+      }
     } catch (err) {
       setIsError(err.message);
     }
-  };
 
-  const fetchDynamicVideoList = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios.get(`${API_URL}/videos${API_KEY}`);
-      const videoList = response.data;
-      setCurrentVideoList(videoList.filter((video) => video.id != videoId));
-      setIsLoading(false);
-    } catch (err) {
-      setIsError(err.message);
-    }
-  };
-
-  const fetchSelectVideo = async (id) => {
-    try {
-      setIsLoading(true);
-      const responseVideo = await axios.get(`${API_URL}/videos/${id}${API_KEY}`);
-      setCurrentVideo(responseVideo.data);
-      setIsLoading(false);
-    } catch (err) {
-      setIsError(err.message);
-    }
+    setIsLoading(false);
   };
 
   useEffect(() => {
-    if (videoId) {
-      fetchSelectVideo(videoId);
-      fetchDynamicVideoList();
-      window.scrollTo(0, 0);
-    } else {
-      fetchDefaultVideoList();
-    }
+    fetchVideo();
   }, [videoId]);
 
-  if (isLoading) return <div>Video Loading...</div>;
+  if (isLoading) return <div>Video List Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -79,7 +53,7 @@ const HomePage = () => {
             <Comments currentVideo={currentVideo} />
           </section>
           <section className="brain-flix__video-list">
-            <VideoList videoList={currentVideoList} />
+            <VideoList currentVideoList={videoList.filter((video) => video.id !== currentVideo.id)} />
           </section>
         </section>
       </main>
